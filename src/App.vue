@@ -1,8 +1,12 @@
 <script setup>
 import { ref } from 'vue'
-const message = ref('Hello World!')
+
+const awesome = ref(true)
 </script>
 
 <template>
-  <h1>{{ message }}</h1>
+  <button @click="awesome = !awesome">toggle</button>
+
+  <h1 v-if="awesome">Vue is awesome!</h1>
+  <h1 v-else>Oh no 😢</h1>
 </template>
