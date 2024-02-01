@@ -1,20 +1,11 @@
 <script setup>
-import { reactive, computed, ref } from 'vue'
+import { ref } from 'vue'
 
-const author = ref({
- name: 'John Doe',
- books: [1,2,3]
-})
-
-const check = computed(() => {
-  return author.value.books.length > 2 ? 'Yes' : 'No'
-})
+const message = ref('')
 </script>
 
 <template>
-   <span>🧔: </span>
-   <span>{{ author.books.length > 2 ? 'Yes' : 'No' }}</span>
-   <div>computed ⬇️</div>
-   <div>{{ check }}</div>
-
+ <span>Multiline message is:</span>
+ <p>{{ message }}</p>
+ <textarea v-model="message" placeholder="add multiple lines"></textarea>
 </template>
